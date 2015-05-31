@@ -3,6 +3,10 @@ package org.sur.ds.graphs;
 import java.util.List;
 import java.util.Stack;
 
+/**
+ * Depth-first search implementation
+ *
+ */
 public class DFS {
 	public void traverse(Node start){
 		Stack<Node> stack = new Stack<Node>();

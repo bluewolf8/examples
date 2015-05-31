@@ -4,8 +4,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * Breadth-first search implementation 
+ *
+ */
 public class BFS {
-	
+
 	public void traverse(Node start){
 		Queue<Node> queue = new LinkedList<Node>();
 		queue.add(start);

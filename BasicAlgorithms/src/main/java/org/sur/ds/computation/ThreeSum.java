@@ -11,13 +11,15 @@ public class ThreeSum {
 		Integer[] numbersArr = (Integer[]) numbers.toArray(new Integer[numbers.size()]);
 		int size = numbersArr.length;
 
-		//O(Log(n))
+		//Sort the array  O(Log(n))
 		Arrays.sort(numbersArr);
 
+		//For each number, look for a pair of numbers such that the sum of these 3 is n
 		//O(n^2)
 		for(int i = 0;i< size - 2 && !containsThreeSum;i++){
 			int firstNumber = numbersArr[i];
 			for(int left = i+1,right = size-1;left < right;){
+				//Th fact that this array is sorted lets us look for the pair in a single loop
 				int secondNumber = numbersArr[left];
 				int thirdNumber = numbersArr[right];
 
@@ -37,5 +39,4 @@ public class ThreeSum {
 		}
 		return containsThreeSum;
 	}
-
 }
