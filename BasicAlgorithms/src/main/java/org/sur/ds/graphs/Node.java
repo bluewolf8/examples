@@ -42,5 +42,4 @@ public class Node {
 	public void setCostToNeighbors(Map<Node, Integer> costToNeighbors) {
 		this.costToNeighbors = costToNeighbors;
 	}
-
 }
