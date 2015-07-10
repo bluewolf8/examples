@@ -21,7 +21,7 @@ public class Djikstras {
 		Map<Node,Node> prevNodes = new HashMap<>();
 		//Stores the minimum cost from the source to every node (initially infinity for all but the source node)
 		Map<Node, Integer> minCostFromSource = new HashMap<>();
-		//Priority queue used to retriving next node havin min cost from the source
+		//Priority queue used for retrieving the next node having min cost from the source
 		PriorityQueue<Node> pq = new PriorityQueue<Node>(new DistanceBasedComparator(minCostFromSource));
 		initCostsToInfinity(source,minCostFromSource);
 		//For source set the min cost to 0 (from source to source cost can only be 0

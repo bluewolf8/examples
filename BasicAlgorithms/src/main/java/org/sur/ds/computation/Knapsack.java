@@ -8,7 +8,12 @@ public class Knapsack {
 	 * @param W maximum weight the Knapsack can hold
 	 */
 	public int solve(int[] weights, int[] values, int W){
-		int[][] best = new int[values.length+2][W+1];
+		//2-D array, row represents item number, column represents 
+		//best value for weight less than or equal to w
+		//Note we create array with length n+1 because we include the case for 0 item/0 weight as well
+		//for example in case 4 items are being considered we need an array of size 5
+		//in the 0th place of the array will be the case when 0 items are being considered.
+		int[][] best = new int[values.length+1][W+1];
 		//Iterate through each item one by one
 		for(int i= 0;i<=values.length;i++){
 			//For each item increase weight from zero to W, current weight we
@@ -24,10 +29,11 @@ public class Knapsack {
 				//If weight of current item  is less than or equal to the current weight we are considering (w)
 				else if(weights[currentItem]<=w){
 					best[currentBest][w] = 
-							//Previous best for this weight
-							Math.max(best[prevBest][w], 
-							//Current value + value of previous best for weight (w - current items weight)
-							values[currentItem] + best[prevBest][w - weights[currentItem]]);
+							Math.max(
+									//Previous best for this weight
+									best[prevBest][w], 
+									//Current value + value of previous best for weight (w - current items weight)
+									values[currentItem] + best[prevBest][w - weights[currentItem]]);
 				}
 				else {
 					//We cannot consider current item for this weight w since it's weight is greater
@@ -39,8 +45,6 @@ public class Knapsack {
 			}
 
 		}
-
 		return best[values.length][W];
 	}
-
 }

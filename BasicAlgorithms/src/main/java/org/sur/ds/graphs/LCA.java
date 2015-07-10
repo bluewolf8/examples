@@ -7,13 +7,17 @@ package org.sur.ds.graphs;
 public class LCA {
 
 	public Node getLCA(Node node, String value1, String value2){
+		//Base case matching node is found
 		if(node.getValue().equals(value1) || node.getValue().equals(value2)){
 			//return then node itself to tell caller that one of the nodes being searched has been found
 			return node;
 		}
+		//Base case we encountered a leaf node
 		else if(node.getNeighbors().size()==0){
 			return null;
 		}
+		
+		//Recursive calls to both sub trees
 		Node left = getLCA(node.getNeighbors().get(0), value1, value2);
 		Node right = getLCA(node.getNeighbors().get(1), value1, value2);
 

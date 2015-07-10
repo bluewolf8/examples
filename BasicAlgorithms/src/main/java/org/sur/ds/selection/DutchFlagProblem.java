@@ -10,6 +10,10 @@ import java.util.Arrays;
 public class DutchFlagProblem {
 
 	public void solve(Integer[] numbers){
+		/**
+		 * left mid                right
+		 * |___|___|___|___|___|___|___|
+		 */
 		int left = 0;
 		int mid = 1;
 		int right = numbers.length-1;

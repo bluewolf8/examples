@@ -14,7 +14,7 @@ public class ThreeSumTest {
 		Integer[] numbers = new Integer[]{-25,-10, -7, -3, 2, 4, 8, 10};
 		ThreeSum threeSum = new ThreeSum();
 		Set<Integer> numbersSet = new HashSet<Integer>(Arrays.asList(numbers));
-		Assert.assertTrue(threeSum.containsThreeSum(numbersSet, 0));
+		Assert.assertTrue(threeSum.containsNSum(numbersSet, 0));
 	}
 
 }
